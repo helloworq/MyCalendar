@@ -1,5 +1,4 @@
-const { createRoot } = ReactDOM;
-const { Timeline } = antd;
+import { Timeline } from 'antd';
 const MyTimeLineBase = () => {
   return (
     <div>
@@ -19,6 +18,7 @@ const MyTimeLineBase = () => {
           },
         ]}
       />
-    </div>)
+    </div>
+  )
 };
 export default MyTimeLineBase;

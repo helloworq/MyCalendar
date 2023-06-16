@@ -1,6 +1,5 @@
-const { createRoot } = ReactDOM;
-const {  Radio, Timeline  } = antd;
-const {  useState  } = React;;
+import {  Radio, Timeline  } from 'antd';
+const {  useState  } = React;
 const MyTimeLineLeft = () => {
   const [mode, setMode] = useState('left');
   const onChange = (e) => {

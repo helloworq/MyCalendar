@@ -1,5 +1,4 @@
-const { createRoot } = ReactDOM;
-const {  Button, Timeline  } = antd;
+import {  Button, Timeline  } from 'antd';
 const {  useState  } = React;;
 const MyTimeLineReverse = () => {
   const [reverse, setReverse] = useState(false);

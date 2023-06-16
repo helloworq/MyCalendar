@@ -94,6 +94,13 @@ const MyIndex = () => {
     if (info.type === 'month') return monthCellRender(current);
     return info.originNode;
   };
-  return <Calendar cellRender={cellRender} />;
+  return <Calendar 
+  cellRender={cellRender} 
+  onSelect={(date,{source})=>{
+    if (source === 'date') {
+      console.log('Panel Select:', source.toString()+source.charAt()+source.endsWith());
+      console.log('date:', date);
+    }
+  }}/>;
 };
 export default MyIndex;
