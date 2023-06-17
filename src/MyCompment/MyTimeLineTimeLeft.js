@@ -1,5 +1,7 @@
 import {  Radio, Timeline  } from 'antd';
-const {  useState  } = React;
+import { useState } from 'react';
+import { ClockCircleOutlined } from '@ant-design/icons';
+
 const MyTimeLineLeft = () => {
   const [mode, setMode] = useState('left');
   const onChange = (e) => {
@@ -30,9 +32,12 @@ const MyTimeLineLeft = () => {
             children: 'Solve initial network problems',
           },
           {
+            dot: <ClockCircleOutlined className="timeline-clock-icon" />,
+            color :'red',
             children: 'Technical testing',
           },
           {
+            dot: <ClockCircleOutlined className="timeline-clock-icon" />,
             label: '2015-09-01 09:12:11',
             children: 'Network problems being solved',
           },

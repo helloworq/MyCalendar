@@ -1,4 +1,8 @@
 import { Badge, Calendar } from 'antd';
+import { useState } from 'react';
+import MyTimeLineDiffEle from './MyTimeLineDiffEle'
+import MyTimeLineLeft from './MyTimeLineTimeLeft';
+
 const getListData = (value) => {
   let listData;
   switch (value.date()) {
@@ -67,7 +71,8 @@ const getMonthData = (value) => {
     return 1394;
   }
 };
-const MyIndex = () => {
+const MyCalender = () => {
+
   const monthCellRender = (value) => {
     const num = getMonthData(value);
     return num ? (
@@ -94,13 +99,14 @@ const MyIndex = () => {
     if (info.type === 'month') return monthCellRender(current);
     return info.originNode;
   };
-  return <Calendar 
-  cellRender={cellRender} 
-  onSelect={(date,{source})=>{
-    if (source === 'date') {
-      console.log('Panel Select:', source.toString()+source.charAt()+source.endsWith());
-      console.log('date:', date);
-    }
-  }}/>;
+  const compment = <Calendar
+    cellRender={cellRender}
+    onSelect={(date, { source }) => {
+      if (source === 'date') {
+        setPage(<MyTimeLineLeft />)
+      }
+    }} />;
+  const [page, setPage] = useState(compment);
+  return page
 };
-export default MyIndex;
+export default MyCalender;
